@@ -23,35 +23,34 @@ async function getFace() {
 	await fetch('data.json')
 		.then(response => response.json())
 		.then(data => {
-			
-			
 
-			if (data.profile.name === name && data.profile.age === age) {
+			data.posts.forEach(obj => {
 
-
-				const face = document.createElement('img')
-				const spinner = document.querySelector('.spinner')
-				show_message(message_box.load)
-				face.src = './img/face.png';
-				face.style.cssText = `width: 100%; height:
-								  100%; max-width: 300px; 
-								  animation: skale 1s linear;
-								  `
-
-				spinner.style.display = 'block'
-				setTimeout(() => {
-					conteiner.append(face)
-					spinner.style.display = 'none'
-					show_message(message_box.done)
-				}, 2000)
+				if (obj.name === name && obj.age === age) {
 
 
-			} else {
-				show_message(message_box.error)
-			}
+					const face = document.createElement('img')
+					const spinner = document.querySelector('.spinner')
+					show_message(message_box.load)
+					face.src = obj.img_url
+					face.style.cssText = `width: 100%; height:
+									  100%; max-width: 300px; 
+									  animation: skale 1s linear;
+									  `
+
+					spinner.style.display = 'block'
+					setTimeout(() => {
+						conteiner.append(face)
+						spinner.style.display = 'none'
+						show_message(message_box.done)
+					}, 2000)
+
+
+				} else {
+					show_message(message_box.error)
+				}
+			})
 		});
 }
-
-
 
 btn_get.addEventListener('click', getFace);
