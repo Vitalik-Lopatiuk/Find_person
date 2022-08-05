@@ -1,5 +1,35 @@
 {
-  "persons": {
-    "post_form": null
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "name": "12",
+      "age": "12",
+      "id": 2
+    },
+    {
+      "name": "ww",
+      "age": "",
+      "id": 3
+    },
+    {
+      "name": "",
+      "age": "",
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "hello",
+    "age": "1"
   }
 }

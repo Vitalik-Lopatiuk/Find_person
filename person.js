@@ -5,14 +5,14 @@ window.addEventListener('DOMContentLoaded', () => {
 		
 		const name = document.querySelector('.new-surname').value
 		const age = document.querySelector('.new-age').value
-		fetch('  http://localhost:3000/persons', {
+		fetch('  http://localhost:3000/profile', {
 			method: 'POST',
 			headers: {
 				'Content-type': 'application/json'
 			},
 			body: JSON.stringify({
-				"surname": name,
-				"personage": age
+				 name,
+				 age
 			})
 		})
 	}

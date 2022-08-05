@@ -23,14 +23,16 @@ async function getFace() {
 	await fetch('data.json')
 		.then(response => response.json())
 		.then(data => {
+			
+			
 
-			if (data.persons.surname === name && data.persons.personage === age) {
+			if (data.profile.name === name && data.profile.age === age) {
 
 
 				const face = document.createElement('img')
 				const spinner = document.querySelector('.spinner')
 				show_message(message_box.load)
-				face.src = data.persons.photosrc;
+				face.src = './img/face.png';
 				face.style.cssText = `width: 100%; height:
 								  100%; max-width: 300px; 
 								  animation: skale 1s linear;
