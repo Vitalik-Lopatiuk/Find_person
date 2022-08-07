@@ -8,11 +8,10 @@ const message_box = {
 }
 
 function show_message(data) {
-	const show = document.createElement('div')
-	show.innerHTML = data
-	conteiner.append(show)
+	const show_message = document.querySelector('.show-message')
+	show_message.innerHTML = data
 	setTimeout(() => {
-		show.innerHTML = ''
+		show_message.innerHTML = ''
 	}, 3000)
 }
 
@@ -29,21 +28,24 @@ async function getFace() {
 				if (obj.name === name && obj.age === age) {
 
 
-					const face = document.createElement('img')
+					const face_show = document.querySelector('.face-show')
 					const spinner = document.querySelector('.spinner')
 					show_message(message_box.load)
-					face.src = obj.img_url
-					face.style.cssText = `width: 100%; height:
+
+
+					face_show.style.cssText = `width: 100%; height:
 									  100%; max-width: 300px; 
 									  animation: skale 1s linear;
 									  `
 
 					spinner.style.display = 'block'
 					setTimeout(() => {
-						conteiner.append(face)
+						face_show.src = obj.img_url
+
 						spinner.style.display = 'none'
 						show_message(message_box.done)
 					}, 2000)
+
 
 
 				} else {
