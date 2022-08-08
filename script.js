@@ -16,27 +16,23 @@ function show_message(data) {
 }
 
 async function getFace() {
-
 	const name = document.querySelector('.name').value;
 	const age = document.querySelector('.age').value;
+
 	await fetch('data.json')
 		.then(response => response.json())
 		.then(data => {
 
 			data.posts.forEach(obj => {
-
 				if (obj.name === name && obj.age === age) {
-
-
 					const face_show = document.querySelector('.face-show')
 					const spinner = document.querySelector('.spinner')
 					show_message(message_box.load)
 
-
 					face_show.style.cssText = `width: 100%; height:
-									  100%; max-width: 300px; 
-									  animation: skale 1s linear;
-									  `
+									100%; max-width: 300px; 
+									animation: skale 1s linear;
+									`
 
 					spinner.style.display = 'block'
 					setTimeout(() => {
@@ -45,8 +41,6 @@ async function getFace() {
 						spinner.style.display = 'none'
 						show_message(message_box.done)
 					}, 2000)
-
-
 
 				} else {
 					show_message(message_box.error)

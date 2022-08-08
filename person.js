@@ -1,11 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
 	const new_btn = document.querySelector('.new-btn')
-	const new_person = document.querySelector('.new-person')
 
 	const message_box = {
 		done: 'Все пройшло успішно',
 		error: ' Ви ввели неправильні дані'
-
 	}
 
 	function show_message(data) {
@@ -13,11 +11,10 @@ window.addEventListener('DOMContentLoaded', () => {
 		show_message.innerHTML = data
 		setTimeout(() => {
 			show_message.innerHTML = ''
-		}, 3000)
+		}, 2000)
 	}
 	async function postFace() {
 		const img_url = document.querySelector('.img-url').value
-
 
 		const name = document.querySelector('.new-surname').value
 		const age = document.querySelector('.new-age').value
@@ -41,6 +38,5 @@ window.addEventListener('DOMContentLoaded', () => {
 	}
 
 	new_btn.addEventListener('click', postFace);
-
 
 })
