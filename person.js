@@ -37,6 +37,9 @@ window.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
-	new_btn.addEventListener('click', postFace);
+	function render() {
+		postFace()
+	}
+	new_btn.addEventListener('click', render);
 
 })

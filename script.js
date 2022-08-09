@@ -49,4 +49,8 @@ async function getFace() {
 		});
 }
 
-btn_get.addEventListener('click', getFace);
+function render() {
+	getFace()
+}
+
+btn_get.addEventListener('click', render);
